@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset= "UTF-8"/>
+        <title>Formulario</title>
+        <script> 
+            function Valida(miFormulario) {
+                if ((formulario.Jugador.value.length <4 ) || (formulario.Equipo.value.length <4 )) {
+                    alert('!Nombre de Jugador o Equipo demasiado corto!');
+                    return false;
+                }
+                else if ((formulario.Ciudad.value.length >12 ) || (formulario.País.value.length >12 )) {
+                    alert('!Nombre de Ciudad o País demasiado largo!');
+                    return false;
+                }
+                else if (formulario.Numero.value.length == 0) {
+                    alert('Falta información');
+                    return false;
+                }
+                else if (isNaN(parseInt(formulario.Numero.value))) {
+                    alert('Debe indicar un número');
+                    return false;
+                }
+                return true
+            }
+        </script>
+    </head>
+   <body>
+    <form name="miFormulario" action="mailto:arianalopezjauregui@gmail.com" onSubmit="return Valida(this);">
+        <br>
+        Jugador<input type="text" name="Jugador">
+        <br>
+        Equipo<input type="text" name="Equipo">
+        <br>
+        Ciudad<input type="text" name="Ciudad">
+        <br>
+        País<input type="text" name="Pais">
+        <br>
+        Número<input type="number" name="Numero">
+        <br>
+        <input type="submit" value="Validar Datos" name="enviar">
+    </form>
+   </body> 
+</html>
